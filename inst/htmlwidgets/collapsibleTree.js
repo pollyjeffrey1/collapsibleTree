@@ -92,6 +92,16 @@ HTMLWidgets.widget({
       .style('font-size', options.fontSize + 'px')
       .text(function(d) { return d.data.name; });
 
+      // Add node weight to each node
+      nodeEnter.append("text")
+      .transition()
+      .duration(_duration * 1.8)
+      .attr("x", 0)
+      .attr("dy", "0.35em")
+      .attr("text-anchor", "middle")
+      .text(function(d) { return d.value; })
+      .style("font-size", function(d) { return _fontScale(d.value) + "px"; });
+
       // UPDATE
       var nodeUpdate = nodeEnter.merge(node);
 
