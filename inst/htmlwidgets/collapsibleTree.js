@@ -94,8 +94,6 @@ HTMLWidgets.widget({
 
       // Add node weight to each node
       nodeEnter.append("text")
-      .transition()
-      .duration(_duration * 1.8)
       .attr('x', 0)
       .attr('dy', '0.35em')
       .attr('text-anchor', 'middle')
