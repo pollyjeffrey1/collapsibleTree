@@ -227,7 +227,7 @@ HTMLWidgets.widget({
 
         // Show either a constructed tooltip, or override with one from the data
         tooltip.html(
-          '<strong>' + d.data.tooltip || d.data.name + ':</strong> ' + d.data.WeightOfNode
+          d.data.tooltip || d.data.name + ': ' + d.data.WeightOfNode
         )
         // Make the tooltip font size just a little bit bigger
         .style('font-size', (options.fontSize + 1) + 'px')
