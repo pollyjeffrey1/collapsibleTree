@@ -94,7 +94,7 @@ HTMLWidgets.widget({
 
       // Add node weight to each node
       nodeEnter.append('text')
-      .text('test');
+      .text(function(d) { return d.data.WeightOfNode; });
 
       // UPDATE
       var nodeUpdate = nodeEnter.merge(node);
