@@ -94,7 +94,10 @@ HTMLWidgets.widget({
 
       // Add node weight to each node
       nodeEnter.append('text')
-      .style('font-size', function(d) { return _fontScale(d.data.WeightOfNode) + 'px'; })
+      .attr('x', 0)
+      .attr('dy', '.35em')
+      .attr('text-anchor', 'middle')
+      .style('font-size', options.fontSize + 'px')
       .text(function(d) { return d.data.WeightOfNode; });
 
       // UPDATE
