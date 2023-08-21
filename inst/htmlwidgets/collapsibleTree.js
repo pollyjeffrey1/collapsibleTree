@@ -72,7 +72,7 @@ HTMLWidgets.widget({
       .attr('class', 'node')
       .attr('r', 1e-6)
       .style('fill', function(d) {
-        return d.data.fill || (d._children ? options.fill : '#cc1fa4');
+        return d.data.fill || (d._children ? options.fill : '#fff');
       })
       .style('stroke-width', function(d) {
         return d._children ? 3 : 1;
@@ -108,7 +108,7 @@ HTMLWidgets.widget({
         return d.data.SizeOfNode || 10; // default radius is 10
       })
       .style('fill', function(d) {
-        return d.data.fill || (d._children ? options.fill : '#cc1fa4');
+        return d.data.fill || (d._children ? options.fill : '#fff');
       })
       .style('stroke-width', function(d) {
         return d._children ? 3 : 1;
@@ -217,8 +217,7 @@ HTMLWidgets.widget({
 
         // Show either a constructed tooltip, or override with one from the data
         tooltip.html(
-          d.data.tooltip || d.data.name + '<br>' +
-          options.attribute + ': ' + d.data.WeightOfNode
+          '<strong>' + d.data.tooltip || d.data.name + ':</strong> ' + d.data.WeightOfNode
         )
         // Make the tooltip font size just a little bit bigger
         .style('font-size', (options.fontSize + 1) + 'px')
