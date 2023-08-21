@@ -79,7 +79,7 @@ HTMLWidgets.widget({
       });
 
       // Add labels for the nodes
-      nodeEnter.append('text')
+      /*nodeEnter.append('text')
       .attr('dy', '.35em')
       .attr('x', function(d) {
         // Scale padding for label to the size of node
@@ -90,7 +90,7 @@ HTMLWidgets.widget({
         return d.children || d._children ? 'end' : 'start';
       })
       .style('font-size', options.fontSize + 'px')
-      .text(function(d) { return d.data.name; });
+      .text(function(d) { return d.data.name; });*/
 
       // Add node weight to each node
       nodeEnter.append('text')
