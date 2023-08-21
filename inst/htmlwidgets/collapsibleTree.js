@@ -72,7 +72,7 @@ HTMLWidgets.widget({
       .attr('class', 'node')
       .attr('r', 1e-6)
       .style('fill', function(d) {
-        return d.data.fill || (d._children ? options.fill : '#fff');
+        return d.data.fill || (d._children ? options.fill : '#cc1fa4');
       })
       .style('stroke-width', function(d) {
         return d._children ? 3 : 1;
@@ -108,7 +108,7 @@ HTMLWidgets.widget({
         return d.data.SizeOfNode || 10; // default radius is 10
       })
       .style('fill', function(d) {
-        return d.data.fill || (d._children ? options.fill : '#fff');
+        return d.data.fill || (d._children ? options.fill : '#cc1fa4');
       })
       .style('stroke-width', function(d) {
         return d._children ? 3 : 1;
