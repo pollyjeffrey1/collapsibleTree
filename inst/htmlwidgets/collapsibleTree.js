@@ -11,7 +11,7 @@ HTMLWidgets.widget({
     options = {},
     treemap;
 
-    let myScale = d3.scaleSqrt().rangeRound([4,48]);
+    var myScale = d3.scaleSqrt().rangeRound([4,48]);
 
     // Optionally enable zooming, and limit to 1/5x or 5x of the original viewport
     var zoom = d3.zoom()
