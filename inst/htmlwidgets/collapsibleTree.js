@@ -7,7 +7,7 @@ HTMLWidgets.widget({
 
     var i = 0,
     duration = 750,
-    fontScale = d3.scale.sqrt().rangeRound([4, 48])
+    fontScale = d3.scale.sqrt().rangeRound([4, 48]),
     root = {},
     options = {},
     treemap;
