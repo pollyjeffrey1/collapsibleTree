@@ -97,7 +97,7 @@ HTMLWidgets.widget({
       .attr('x', 0)
       .attr('dy', '.35em')
       .attr('text-anchor', 'middle')
-      .style('font-size', 20 + 'px')
+      .style('font-size', function(d) { return myScale(d.WeightOfNode) + 'px'; })
       .text(function(d) { return d.data.WeightOfNode; });
 
       // UPDATE
