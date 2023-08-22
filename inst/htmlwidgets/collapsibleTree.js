@@ -100,11 +100,11 @@ HTMLWidgets.widget({
       .attr('text-anchor', 'middle')
       .text(function(d) { return d.data.WeightOfNode; })
       .style("font-size", function(d){
-        if (d.data.SizeOfNode > 5){
-        return '40px';
-        } else {
-        return '20px';
-        }
+        if (d.data.SizeOfNode > 5){ return '40px'; }
+        else if (d.data.SizeOfNode > 4){ return '30px'; }
+        else if (d.data.SizeOfNode > 3){ return '20px'; }
+        else if (d.data.SizeOfNode > 2){ return '10px'; }
+        else { return '5px'; }
       });
       /*.style('font-size', function(d) { return _fontScale(d.data.WeightOfNode) + 'px'; });*/
       
