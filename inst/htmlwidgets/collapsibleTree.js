@@ -92,6 +92,9 @@ HTMLWidgets.widget({
       .style('font-size', options.fontSize + 'px')
       .text(function(d) { return d.data.name; });
 
+      var fontScale = d3.scaleSqrt().rangeRound([4, 48]);
+      /*d.scale = fontScale(d.data.WeightOfNode);*/
+      
       // Add node weight to each node
       nodeEnter.append('text')
       .attr('x', 0)
@@ -99,15 +102,10 @@ HTMLWidgets.widget({
       .attr('text-anchor', 'middle')
       .text(function(d) { return d.data.WeightOfNode; })
       .style('font-size', '1px')
-      .each(getSize)
-      .style('font-size', function(d) { return d.scale + 'px'; });
+      /*.each(getSize)*/
+      .style('font-size', function(d) { return fontScale(d.data.WeightOfNode) + 'px'; });
       ;
-
-      function getSize(d) {
-        var fontScale = d3.scaleSqrt().rangeRound([4, 48]);
-        d.scale = fontScale(d.data.WeightOfNode);
-      }
-
+      
       // UPDATE
       var nodeUpdate = nodeEnter.merge(node);
 
