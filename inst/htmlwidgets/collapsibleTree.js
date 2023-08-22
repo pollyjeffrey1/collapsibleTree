@@ -7,6 +7,7 @@ HTMLWidgets.widget({
 
     var i = 0,
     duration = 750,
+    _fontScale = d3.scale.sqrt().rangeRound([4, 48])
     root = {},
     options = {},
     treemap;
@@ -95,7 +96,8 @@ HTMLWidgets.widget({
       .attr('x', 0)
       .attr('dy', '.35em')
       .attr('text-anchor', 'middle')
-      .style('font-size', options.fontSize + 'px')
+      /*.style('font-size', options.fontSize + 'px')*/
+      .style('font-size', function(d) { return _fontScale(d.data.WeightOfNode) + "px"; })
       .text(function(d) { return d.data.WeightOfNode; });
 
       // UPDATE
