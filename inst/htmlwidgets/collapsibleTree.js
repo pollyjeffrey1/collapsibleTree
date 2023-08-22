@@ -111,7 +111,7 @@ HTMLWidgets.widget({
       // Update the node attributes and style
       nodeUpdate.select('circle.node')
       .attr('r', function(d) {
-        return d.data.WeightOfNode || 10; // default radius is 10
+        return d.data.SizeOfNode || 10; // default radius is 10
       })    
       .style('fill', function(d) {
         return d.data.fill || (d._children ? options.fill : '#fff');
