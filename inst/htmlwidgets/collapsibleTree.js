@@ -98,7 +98,8 @@ HTMLWidgets.widget({
       .attr('x', 0)
       .attr('dy', '.35em')
       .attr('text-anchor', 'middle')
-      .text(function(d) { return d.data.WeightOfNode; })
+      /*.text(function(d) { return d.data.WeightOfNode; })*/
+      .text(function(d) { return d.data.SizeOfNode; })
       .style("font-size", function(d){
         if (d.data.SizeOfNode > 5){ return '25px'; }
         else if (d.data.SizeOfNode > 4 & d.data.SizeOfNode < 5){ return '20px'; }
