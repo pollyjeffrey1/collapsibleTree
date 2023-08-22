@@ -10,9 +10,6 @@ HTMLWidgets.widget({
     root = {},
     options = {},
     treemap;
-    /*_fontScale = d3.scaleSqrt().rangeRound([4, 48]);*/
-
-    /*var _myScale = d3.scaleSqrt().rangeRound([4, 48]);*/
 
     // Optionally enable zooming, and limit to 1/5x or 5x of the original viewport
     var zoom = d3.zoom()
@@ -99,7 +96,7 @@ HTMLWidgets.widget({
       .attr('dy', '.35em')
       .attr('text-anchor', 'middle')
       /*.text(function(d) { return d.data.WeightOfNode; })*/
-      .text(function(d) { return d.data.SizeOfNode; })
+      .text(function(d) { return d.data.WeightOfNode; })
       .style("font-size", function(d){
         if (d.data.SizeOfNode > 30){ return '25px'; }
         else if (d.data.SizeOfNode > 25 & d.data.SizeOfNode <= 30){ return '15px'; }
@@ -108,12 +105,9 @@ HTMLWidgets.widget({
         else if (d.data.SizeOfNode > 12.5 & d.data.SizeOfNode <= 15){ return '9.5px'; }
         else if (d.data.SizeOfNode > 10 & d.data.SizeOfNode <= 12.5){ return '8px'; }
         else if (d.data.SizeOfNode > 5 & d.data.SizeOfNode <= 10){ return '5px'; }
-        /*else if (d.data.SizeOfNode > 2 & d.data.SizeOfNode < 3){ return '5px'; }*/
         else { return '3.5px'; }
       });
-      /*.style('font-size', function(d) { return _fontScale(d.data.WeightOfNode) + 'px'; });*/
-      
-      
+         
       // UPDATE
       var nodeUpdate = nodeEnter.merge(node);
 
