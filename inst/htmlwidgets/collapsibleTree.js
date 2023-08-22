@@ -98,19 +98,14 @@ HTMLWidgets.widget({
       .attr('dy', '.35em')
       .attr('text-anchor', 'middle')
       .text(function(d) { return d.data.WeightOfNode; })
-      /*.style("font-size", function(d) { return (2 * d.r - 10) / this.getComputedTextLength() * 10 + "px"; })*/
-      .style('font-size', function(d) { return d.scaleSqrt().domain(d.data.WeightOfNode).rangeRound([4, 48]) + 'px';} )
-      /*.style('font-size', '1px')
+      .style('font-size', '1px')
       .each(getSize)
-      .style('font-size', function(d) { return d.scale + 'px'; });*/
-      /*.style('font-size', function(d) { return d3.scaleSqrt(d.data.WeightOfNode).rangeRound([4, 48]) + 'px';} )*/
+      .style('font-size', function(d) { return d.scale + 'px'; });
       ;
 
       function getSize(d) {
-        var bbox = this.getBBox(),
-            cbbox = this.parentNode.getBBox(),
-            scale = Math.min(cbbox.width/bbox.width, cbbox.height/bbox.height);
-        d.scale = scale;
+        var fontScale = d3.scaleSqrt().rangeRound([4, 48]);
+        d.scale = fontScale;
       }
 
       // UPDATE
