@@ -11,7 +11,7 @@ HTMLWidgets.widget({
     options = {},
     treemap;
 
-    var myScale = d3.scaleSqrt().rangeRound([4,48]);
+    var _myScale = d3.scaleSqrt().rangeRound([4,48]);
 
     // Optionally enable zooming, and limit to 1/5x or 5x of the original viewport
     var zoom = d3.zoom()
@@ -97,7 +97,7 @@ HTMLWidgets.widget({
       .attr('x', 0)
       .attr('dy', '.35em')
       .attr('text-anchor', 'middle')
-      .style('font-size', function(d) { return myScale(d.WeightOfNode) + 'px'; })
+      .style('font-size', function(d) { return _myScale(d.WeightOfNode) + 'px'; })
       .text(function(d) { return d.data.WeightOfNode; });
 
       // UPDATE
