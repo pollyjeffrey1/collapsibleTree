@@ -73,10 +73,8 @@ HTMLWidgets.widget({
       .attr('r', 1e-6)
       .style('fill', function(d) {
         return d.data.fill || (d._children ? options.fill : '#fff');
-      });
-      /*.style('stroke-width', function(d) {
-        return d._children ? 3 : 1;
-      });*/
+      })
+      .style('stroke-width', 2);
 
       // Add labels for the nodes
       nodeEnter.append('text')
@@ -118,9 +116,7 @@ HTMLWidgets.widget({
       .style('fill', function(d) {
         return d.data.fill || (d._children ? options.fill : '#fff');
       })
-      /*.style('stroke-width', function(d) {
-        return d._children ? 3 : 1;
-      })*/
+      .style('stroke-width', 2)
       .attr('cursor', 'pointer');
 
 
