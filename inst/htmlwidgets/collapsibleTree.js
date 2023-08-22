@@ -9,7 +9,8 @@ HTMLWidgets.widget({
     duration = 750,
     root = {},
     options = {},
-    treemap;
+    treemap,
+    _fontScale = d3.scaleSqrt().rangeRound([4, 48]);
 
     /*var _myScale = d3.scaleSqrt().rangeRound([4, 48]);*/
 
@@ -91,9 +92,6 @@ HTMLWidgets.widget({
       })
       .style('font-size', options.fontSize + 'px')
       .text(function(d) { return d.data.name; });
-
-      var fontScale = d3.scaleSqrt().rangeRound([4, 48]);
-      /*d.scale = fontScale(d.data.WeightOfNode);*/
       
       // Add node weight to each node
       nodeEnter.append('text')
@@ -101,9 +99,7 @@ HTMLWidgets.widget({
       .attr('dy', '.35em')
       .attr('text-anchor', 'middle')
       .text(function(d) { return d.data.WeightOfNode; })
-      .style('font-size', '1px')
-      /*.each(getSize)*/
-      .style('font-size', function(d) { return fontScale(d.data.WeightOfNode) + 'px'; });
+      .style('font-size', function(d) { return _fontScale(d.data.WeightOfNode) + 'px'; });
       ;
       
       // UPDATE
