@@ -7,7 +7,6 @@ HTMLWidgets.widget({
 
     var i = 0,
     duration = 750,
-    radiusScale = d3.scale.sqrt().range([0, 100])
     root = {},
     options = {},
     treemap;
@@ -111,12 +110,9 @@ HTMLWidgets.widget({
 
       // Update the node attributes and style
       nodeUpdate.select('circle.node')
-      /*.attr('r', function(d) {
-        return d.data.SizeOfNode || 10; // default radius is 10
-      })*/
       .attr('r', function(d) {
-        return _radiusScale(d.data.WeightOfNode); // default radius is 10
-      })        
+        return d.data.SizeOfNode || 50; // default radius is 10
+      })    
       .style('fill', function(d) {
         return d.data.fill || (d._children ? options.fill : '#fff');
       })
