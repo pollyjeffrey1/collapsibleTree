@@ -101,10 +101,11 @@ HTMLWidgets.widget({
       /*.text(function(d) { return d.data.WeightOfNode; })*/
       .text(function(d) { return d.data.SizeOfNode; })
       .style("font-size", function(d){
-        if (d.data.SizeOfNode > 5){ return '25px'; }
-        else if (d.data.SizeOfNode > 4 & d.data.SizeOfNode < 5){ return '20px'; }
-        else if (d.data.SizeOfNode > 3 & d.data.SizeOfNode < 4){ return '10px'; }
-        else if (d.data.SizeOfNode > 2 & d.data.SizeOfNode < 3){ return '5px'; }
+        if (d.data.SizeOfNode > 30){ return '25px'; }
+        else if (d.data.SizeOfNode > 20 & d.data.SizeOfNode <= 30){ return '15px'; }
+        else if (d.data.SizeOfNode > 15 & d.data.SizeOfNode <= 20){ return '12.5px'; }
+        else if (d.data.SizeOfNode > 10 & d.data.SizeOfNode <= 15){ return '10px'; }
+        /*else if (d.data.SizeOfNode > 2 & d.data.SizeOfNode < 3){ return '5px'; }*/
         else { return '2px'; }
       });
       /*.style('font-size', function(d) { return _fontScale(d.data.WeightOfNode) + 'px'; });*/
