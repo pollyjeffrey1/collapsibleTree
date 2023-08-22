@@ -110,9 +110,10 @@ HTMLWidgets.widget({
 
       // Update the node attributes and style
       nodeUpdate.select('circle.node')
-      .attr('r', function(d) {
+      /*.attr('r', function(d) {
         return d.data.SizeOfNode || 50; // default radius is 10
-      })    
+      }) */   
+      .attr('r', 100)           
       .style('fill', function(d) {
         return d.data.fill || (d._children ? options.fill : '#fff');
       })
