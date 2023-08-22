@@ -95,8 +95,7 @@ HTMLWidgets.widget({
       .attr('x', 0)
       .attr('dy', '.35em')
       .attr('text-anchor', 'middle')
-      /*.style('font-size', options.fontSize + 'px')*/
-      .style('font-size', function(d) { return d3.scale.sqrt(d.data.WeightOfNode) + "px"; })
+      .style('font-size', options.fontSize + 'px')
       .text(function(d) { return d.data.WeightOfNode; });
 
       // UPDATE
