@@ -99,7 +99,7 @@ HTMLWidgets.widget({
       .attr('dy', '.35em')
       .attr('text-anchor', 'middle')
       .text(function(d) { return d.data.WeightOfNode; })
-      .style("font-size", function(){
+      .style("font-size", function(d){
         if (d.data.WeightOfNode > 1000){
         return "40px"
         }
