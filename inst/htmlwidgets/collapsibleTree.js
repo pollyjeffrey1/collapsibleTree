@@ -100,10 +100,10 @@ HTMLWidgets.widget({
       .attr('text-anchor', 'middle')
       .text(function(d) { return d.data.WeightOfNode; })
       .style("font-size", function(d){
-        if (d.data.WeightOfNode > 5){
+        if (d.data.SizeOfNode > 5){
         return '40px';
         } else {
-        return '10px';
+        return '20px';
         }
       });
       /*.style('font-size', function(d) { return _fontScale(d.data.WeightOfNode) + 'px'; });*/
