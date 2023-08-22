@@ -97,8 +97,19 @@ HTMLWidgets.widget({
       .attr('x', 0)
       .attr('dy', '.35em')
       .attr('text-anchor', 'middle')
-      .style('font-size', function(d) { return d3.scaleSqrt(d.data.WeightOfNode).rangeRound([4, 48]) + 'px';} )
-      .text(function(d) { return d.data.WeightOfNode; });
+      .text(function(d) { return d.data.WeightOfNode; })
+      .style('font-size', '1px')
+      .each(getSize)
+      .style("font-size", function(d) { return d.scale + 'px'; });
+      /*.style('font-size', function(d) { return d3.scaleSqrt(d.data.WeightOfNode).rangeRound([4, 48]) + 'px';} )*/
+      ;
+
+      function getSize(d) {
+        var bbox = this.getBBox(),
+            cbbox = this.parentNode.getBBox(),
+            scale = Math.min(cbbox.width/bbox.width, cbbox.height/bbox.height);
+        d.scale = scale;
+      }
 
       // UPDATE
       var nodeUpdate = nodeEnter.merge(node);
