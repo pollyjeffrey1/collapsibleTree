@@ -105,7 +105,7 @@ HTMLWidgets.widget({
 
       function getSize(d) {
         var fontScale = d3.scaleSqrt().rangeRound([4, 48]);
-        d.scale = fontScale;
+        d.scale = fontScale(d.data.WeightOfNode);
       }
 
       // UPDATE
