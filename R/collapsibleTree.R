@@ -117,9 +117,9 @@
 #' @export
 collapsibleTree <- function(df, ..., inputId = NULL, attribute = "leafCount",
                             aggFun = sum, fill = "lightsteelblue",
-                            linkLength = NULL, fontSize = 10, fontSizeExtra = NULL, 
-                            tooltip = FALSE, tooltipHtml = NULL,nodeSize = NULL, 
-                            collapsed = TRUE, zoomable = TRUE, width = NULL, height = NULL
+                            linkLength = NULL, fontSize = 10, tooltip = FALSE, 
+                            tooltipHtml = NULL,nodeSize = NULL, collapsed = TRUE, 
+                            zoomable = TRUE, width = NULL, height = NULL, scaleFac = 100
                             ) {
   UseMethod("collapsibleTree")
 }
