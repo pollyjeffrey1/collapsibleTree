@@ -6,7 +6,7 @@ collapsibleTree.data.frame <- function(df, hierarchy, root = deparse(substitute(
                                        aggFun = sum, fill = "lightsteelblue",
                                        fillByLevel = TRUE, linkLength = NULL, fontSize = 10,
                                        tooltip = FALSE, nodeSize = NULL, collapsed = TRUE,
-                                       zoomable = TRUE, width = NULL, height = NULL, scaleFac = 100
+                                       zoomable = TRUE, width = NULL, height = NULL, scaleFac = 100,
                                        ...) {
 
   # preserve this name before evaluating df
