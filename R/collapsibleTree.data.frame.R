@@ -108,7 +108,7 @@ collapsibleTree.data.frame <- function(df, hierarchy, root = deparse(substitute(
   # only necessary to perform these calculations if there is a nodeSize specified
   if(!is.null(nodeSize)) {
     # Scale factor to keep the median leaf size around 10
-    scaleFactor <- 10/data.tree::Aggregate(node, nodeSize, stats::median)
+    scaleFactor <- 5/data.tree::Aggregate(node, nodeSize, stats::median)
     # traverse down the tree and compute the weights of each node for the tooltip
     t <- data.tree::Traverse(node, "pre-order")
     data.tree::Do(t, function(x) {
